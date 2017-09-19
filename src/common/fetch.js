@@ -13,5 +13,8 @@ export default function fetchUtil (opt) {
   const param = method === 'get' ? {
     params
   } : params
-  return axios[method](url || path, param)
+  return new Promise((resolve, reject) =>
+    axios[method](path + url, param)
+    .then(({ data }) => resolve(data))
+    .catch(error => reject(error)))
 }

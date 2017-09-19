@@ -3,8 +3,6 @@ import * as types from './mutaion-types'
 
 const { articleService } = service
 
-console.log(service)
-
 /**
  * 获取文章列表
  * @tip 不保存在仓库
@@ -26,8 +24,9 @@ console.log(service)
  *    ]
  *  }
  */
-export const getArticle = ({ commit }, payload) => {
-  return articleService.getArticle(payload)
+export const getArticleList = ({ commit }, payload) => {
+  const data = articleService.getArticle(payload)
+  return data
 }
 
 /**

@@ -20,5 +20,4 @@ export const getArticle = ({ perPage, page }) => {
       page
     }
   })
-  .then(res => res.json())
 }

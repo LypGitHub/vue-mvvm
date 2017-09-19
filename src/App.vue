@@ -18,15 +18,25 @@ export default {
     }
   },
   computed: {
-    ...mapState({
-      articleList: (store) => console.log(store)
-    })
+    ...mapState([
+      'articleList'
+    ])
   },
-  create () {
-    this.articleData = this.$store.dispatch('getArticle', {
+  watch: {
+    'articleList': function (val) {
+      console.log(val)
+    }
+  },
+  created () {
+    const params = {
       perPage: 10,
       page: 1
-    })
+    }
+    this.$store.dispatch('getArticleList', params)
+      .then(data => {
+        this.articleData = data.list
+      })
+    this.$store.dispatch('getArticleWidthStore', params)
   }
 }
 </script>
