@@ -1,12 +1,54 @@
 var path = require('path')
 var config = require('../config')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var glob = require('glob')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
+var PAGE_PATH = path.resolve(__dirname, '../src/pages')
+var merge = require('webpack-merge')
 
 exports.assetsPath = function (_path) {
   var assetsSubDirectory = process.env.NODE_ENV === 'production'
     ? config.build.assetsSubDirectory
     : config.dev.assetsSubDirectory
   return path.posix.join(assetsSubDirectory, _path)
+}
+
+exports.entries = function () {
+  var entryFiles = glob.sync(PAGE_PATH + '/*/*.js')
+  var map = {}
+  entryFiles.forEach((filePath) => {
+    var filename = filePath.substring(filePath.lastIndexOf('\/') + 1, filePath.lastIndexOf('.'))
+    map[filename] = filePath
+  })
+  return map
+}
+
+exports.htmlPlugin = function () {
+  let entryHtml = glob.sync(PAGE_PATH + '/*/*.html')
+  let arr = []
+  entryHtml.forEach((filePath) => {
+    let filename = filePath.substring(filePath.lastIndexOf('\/') + 1, filePath.lastIndexOf('.'))
+    let conf = {
+      // 模板来源
+      template: filePath,
+      // 文件名称
+      filename: filename + '.html',
+      chunks: ['manifest', 'vendor', filename],
+      inject: true
+    }
+    if (process.env.NODE_ENV === 'production') {
+      conf = merge(conf, {
+        minify: {
+          removeComments: true,
+          collapseWhitespace: true,
+          removeAttributeQuotes: true
+        },
+        chunksSortMode: 'dependency'
+      })
+    }
+    arr.push(new HtmlWebpackPlugin(conf))
+  })
+  return arr
 }
 
 exports.cssLoaders = function (options) {

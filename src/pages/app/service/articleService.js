@@ -1,4 +1,4 @@
-import common from '../common'
+import common from '@common'
 
 const { validator, fetchUtil } = common
 
