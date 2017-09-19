@@ -5,11 +5,14 @@ const { articleService } = service
 
 /**
  * 获取文章列表
- * @tip 不保存在仓库
+ * @tip 不保存在仓库，处理数据
  * @return {Object}
  * @example
  *  如何使用:
- *    this.articleData = this.$store.dispatch('getArticle')
+ *    this.$store.dispatch('getArticleList')
+ *      .then(data => {
+ *          this.articleData = data
+ *      })
  *  这样view层只要关心viewModel层 不需要关心别的，约定好返回数据，就可以工作了
  *  {
  *    count: 63,

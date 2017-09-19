@@ -7,6 +7,13 @@ import store from './store'
 
 Vue.config.productionTip = false
 
+/**
+ * 仅仅支持vue版本2.4以上
+ */
+Vue.config.errorHandler = function (err, vm, info) {
+  console.error(`error message ==> ${err}, error component ==> ${vm}, info ==> ${info}`)
+}
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
