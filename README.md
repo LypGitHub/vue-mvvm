@@ -32,4 +32,12 @@ npm test
 - 在service层做数据校验，不管view层传入的数据如何，service层只获取需要的和正确的
 - 在请求那边并没有做统一的异常捕获，针对不同的接口处理不同，只做一个全局的vue的errorHandle
 
+#### multiPage
+- 多页入口
+- 针对不同的业务场景，选择是否服务端渲染
+
+#### todo
+- 同构
+- 解决同构解析性能问题
+
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
