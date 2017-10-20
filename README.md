@@ -47,5 +47,6 @@ npm test
 - 解决同构解析性能问题
 - 单元测试
 - 常用组件的开发
+- electron打包
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
