@@ -1,6 +1,8 @@
 import common from '@common'
+import controller from '../controller'
 
-const { validator, fetchUtil } = common
+const { fetchUtil } = common
+const { articleCtrl } = controller
 
 /**
  * 获取文章列表
@@ -9,12 +11,10 @@ const { validator, fetchUtil } = common
  * @param {Number} page 页码
  */
 export const getArticle = ({ perPage, page }) => {
-  validator
-    .checkNumber(perPage)
-    .checkNumber(page)
+  articleCtrl.getArticleCtrl({ perPage, page })
 
   return fetchUtil({
-    url: 'articles/list',
+    url: 'v1/articles/list',
     params: {
       perPage,
       page

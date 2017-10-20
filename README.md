@@ -14,6 +14,9 @@ npm run dev
 # build for production with minification
 npm run build
 
+# build for test with minification
+npm run buildtest
+
 # build for production and view the bundle analyzer report
 npm run build --report
 
@@ -39,5 +42,7 @@ npm test
 #### todo
 - 同构
 - 解决同构解析性能问题
+- 单元测试
+- 常用组件的开发
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

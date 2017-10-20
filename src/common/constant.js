@@ -1,1 +1,3 @@
-export const path = process.env.NODE_ENV === 'production' ? 'http://news.baidu.com/widget?id=LocalNews&ajax=json&t=1505734341634' : 'http://test.integrity.com.cn/v1/'
+export const path = process.env.NODE_ENV === 'production' ? 'http://hrhg.integrity.com.cn/' : 'http://test.integrity.com.cn/'
+console.log(process.env.NODE_ENV) 
+
