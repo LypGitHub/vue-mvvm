@@ -55,4 +55,4 @@ export default {
 }
 </script>
 
-<style lang="less" src="./test.less"></style>
+<style lang="less" src="./test-pc.less"></style>

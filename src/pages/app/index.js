@@ -4,9 +4,14 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
-import '../../../static/flexible.min'
+import authCtrl from './controller/authController'
+
+// 判断构建类型移动端需要加入高清方案 https://github.com/ant-design/ant-design-mobile/wiki/HD
+// import '../../../static/flexible.min'
 
 Vue.config.productionTip = false
+
+authCtrl(router)
 
 /**
  * 仅仅支持vue版本2.4以上

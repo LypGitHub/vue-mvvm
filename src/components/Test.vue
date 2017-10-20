@@ -1,11 +1,12 @@
 <template>
   <div class="hello">
+    sdad
   </div>
 </template>
 
 <script>
 export default {
-  name: 'hello',
+  name: 'test',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
@@ -34,5 +35,10 @@ li {
 
 a {
   color: #42b983;
+}
+.hello {
+  height: 500px;
+  width: 100%;
+  background: red;
 }
 </style>

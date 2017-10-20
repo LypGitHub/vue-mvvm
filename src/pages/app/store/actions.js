@@ -27,10 +27,7 @@ const { articleService } = service
  *    ]
  *  }
  */
-export const getArticleList = ({ commit }, payload) => {
-  const data = articleService.getArticle(payload)
-  return data
-}
+export const getArticleList = ({ commit }, payload) => articleService.getArticle(payload)
 
 /**
  * 提交数据保存在仓库
