@@ -11,7 +11,7 @@
     "start-app": "TYPE='app' node build/dev-server.js",
     "server": "node build/prod-server.js",
     "build": "node build/build.js",
-    "buildtest": "NODE_ENV='testing' node build/build.js",
+    "build-test": "NODE_ENV='testing' node build/build.js",
     "build-app-test": "NODE_ENV='testing' TYPE='app' node build/build.js",
     "build-app": "TYPE='app' node build/build.js",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",

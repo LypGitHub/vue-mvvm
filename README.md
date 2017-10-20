@@ -2,6 +2,9 @@
 
 > A Vue.js project
 
+需要构建移动端项目时 将index.js里面的`import '../../../static/flexible.min'`代码注释去掉
+所有的构建命令加`-app`
+
 ## Build Setup
 
 ``` bash
@@ -9,13 +12,13 @@
 npm install
 
 # serve with hot reload at localhost:8080
-npm run dev
+npm run dev(-app)
 
 # build for production with minification
-npm run build
+npm run build(-app)
 
 # build for test with minification
-npm run buildtest
+npm run build-test(-app)
 
 # build for production and view the bundle analyzer report
 npm run build --report
@@ -41,6 +44,7 @@ npm test
 - 提交代码检查
 - 路由进入检查 提供公用校验类
 - 提供移动端构建高清方案pxtorem，默认750px
+- 拆分
 
 #### todo
 - 同构
