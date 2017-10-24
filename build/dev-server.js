@@ -64,7 +64,7 @@ app.use(hotMiddleware)
 var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
 app.use(staticPath, express.static('./static'))
 
-var uri = 'http://localhost:' + port
+var uri = 'http://localhost:' + port + '/pages/index/index.html'
 
 var _resolve
 var readyPromise = new Promise(resolve => {
@@ -73,6 +73,7 @@ var readyPromise = new Promise(resolve => {
 
 console.log('> Starting dev server...')
 devMiddleware.waitUntilValid(() => {
+  console.log('> 构建完成，已自动在浏览器打开页面，如未自动打开，请手工复制下面的链接，复制到浏览器里打开。')
   console.log('> Listening at ' + uri + '\n')
   // when env is testing, don't need open it
   if (autoOpenBrowser && process.env.NODE_ENV !== 'testing') {

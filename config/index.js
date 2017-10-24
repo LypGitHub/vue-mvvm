@@ -1,6 +1,7 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 var path = require('path')
 module.exports = {
+  moduleName: 'pages',
   build: {
     port: 8084,
     env: process.env.NODE_ENV === 'testing' ? require('./test.env') : require('./prod.env'),
@@ -8,7 +9,7 @@ module.exports = {
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsRootStatic: path.resolve(__dirname, '../dist/static'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: '../../',
     assetsPublicStatic: '/static',
     productionSourceMap: true,
     // Gzip off by default as many popular static hosts such as

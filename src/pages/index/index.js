@@ -2,16 +2,16 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import router from './router'
+// import router from './router'
 import store from './store'
-import authCtrl from './controller/authController'
+// import authCtrl from './controller/authController'
 
 // 判断构建类型移动端需要加入高清方案 https://github.com/ant-design/ant-design-mobile/wiki/HD
 // import '../../../static/flexible.min'
 
 Vue.config.productionTip = false
 
-authCtrl(router)
+// authCtrl(router)
 
 /**
  * 仅仅支持vue版本2.4以上
@@ -23,7 +23,7 @@ Vue.config.errorHandler = function (err, vm, info) {
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router,
+  // router,
   store,
   template: '<App/>',
   components: { App }

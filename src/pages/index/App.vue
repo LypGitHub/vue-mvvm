@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <router-view></router-view>
     <ul class="articles">
       <li v-for="item in articleData">
         <div class="articles_cover">
